@@ -1,0 +1,18 @@
+# Nessus Vulnerability Scanner
+# MAINTAINER Markus Matiaschek <mmatiaschek@gmail.com>
+
+version: '2'
+
+services:
+
+  nessus:
+    restart: always
+    build: nessus
+    ports:
+      - 8834:8834
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+      - NESSUS_VERSION=6.9.1
+    volumes:
+#      - ~/nessus/etc:/opt/nessus/etc
+      - ~/nessus/var:/opt/nessus/var
