@@ -14,8 +14,9 @@ RUN wget -O /tmp/Nessus-$NESSUS_VERSION-debian6_amd64.deb \
 
 RUN dpkg -i /tmp/Nessus-$NESSUS_VERSION-debian6_amd64.deb
 
+# persistent volumes currently don't work :( 
 #VOLUME /opt/nessus/etc/
-VOLUME /opt/nessus/var/
+#VOLUME /opt/nessus/var/
 
 EXPOSE 8834
 
